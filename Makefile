@@ -5,6 +5,3 @@ install:
 
 test:
 	go test -v ./...
-
-release:
-	goxc -d=$TRAVIS_BUILD_DIR/dist -bc="linux darwin" -tasks=xc,archive
