@@ -10,7 +10,7 @@ script:
   - make test
 
 before_deploy:
-  - make release
+  - goxc -d=$TRAVIS_BUILD_DIR/dis -bc="linux darwin" -tasks=xc,archive
 
 deploy:
   provider: releases
