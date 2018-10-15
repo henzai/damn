@@ -58,10 +58,6 @@ var Dump = cli.Command{
 	},
 }
 
-// コマンド実行用定数
-const shCmdWithCompress = "docker exec -i %v pg_dump --no-owner -U %v %v | gzip -9 > %v.sql.gz"
-const shCmd = "docker exec -i %v pg_dump --no-owner -U %v %v > %v.sql"
-
 // ダンプ用コマンドを得る
 func getCmd(c *cli.Context, containerID string) string {
 	db := c.String("dbname")
